@@ -1,0 +1,23 @@
+---
+description: Kinwatch product and workspace constraints for every session
+alwaysApply: true
+---
+
+# Kinwatch
+
+The remote family member who never sleeps at the door — a Ring + Alexa+ caretaking copilot for people living alone and the adults who worry about them.
+
+No secrets in git. Use env files (gitignored).
+
+This repo is **public** (Amazon Developer Hackathon Official Rules require a public GitHub repo with an OSS license in About).
+
+Oracle/Paperclip is allowed **only** for company **KIN / Kinwatch**.
+Do not operate on SYN / Maqom.
+Do not operate on CIN / CineTrace AI.
+Do not operate on PKN / PocketNode Core.
+Do not change `/opt/milepo-oracle` deploy defaults.
+Use `.cursor/skills/oracle-connection` and resolve the company by `issuePrefix == "KIN"` (never `companies[0]`).
+
+Do not add `set_lock_state` or any lock actuation. The only partner write is chime playback.
+Do not copy `/opt/milepo-oracle/.env` `CURSOR_API_KEY` (SYN host identity). KIN Cursor identity is the Gmail secret copied from CIN/PKN.
+Never `gh auth login` on the Oracle host with the KIN PAT; host `gh` stays `insiteu-bot`.

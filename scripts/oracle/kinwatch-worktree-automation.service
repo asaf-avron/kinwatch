@@ -1,0 +1,12 @@
+[Unit]
+Description=KIN worktree ensure (Kinwatch)
+After=network-online.target paperclip.service
+
+[Service]
+Type=oneshot
+User=ubuntu
+ExecStart=/bin/bash /opt/kinwatch/scripts/oracle/ensure-kin-worktrees.sh
+Environment=KINWATCH_CLONE=/opt/kinwatch
+Environment=KINWATCH_GITHUB_ENV=/home/ubuntu/.kinwatch/github.env
+Environment=PAPERCLIP_API_BASE=http://127.0.0.1:3100
+TimeoutStartSec=120
