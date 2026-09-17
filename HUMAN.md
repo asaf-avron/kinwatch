@@ -5,8 +5,8 @@ Agents cannot complete these. They are the only steps that block a real Ring/AWS
 ## Identity (done in provision, human follow-up)
 
 1. **Add `asaf-avron/kinwatch` to fine-grained PAT `personal-paperclip-oracle`.** Until that allowlist update, Oracle agents can `git clone` this **public** repo but cannot push or open PRs with the PAT. Host `gh` must stay `insiteu-bot` — never `gh auth login` on Oracle.
-2. Confirm Paperclip secret `cursor-api-key` on KIN is the Gmail Cursor key (`asafavron@gmail.com`), **not** host `/opt/milepo-oracle/.env` (`asafa.insiteu@gmail.com`).
-3. Confirm `~/.kinwatch/github.env` is chmod 600 and the same PAT as CIN/PKN.
+2. Confirm Paperclip secret `cursor-api-key` on KIN is the Gmail Cursor key (`asafavron@gmail.com`), **not** host `/opt/milepo-oracle/.env` (`asafa.insiteu@gmail.com`). Copied from CIN; SHA-256 of the value matches CIN and PKN. `/v0/me` returns `asafavron@gmail.com`. A CEO heartbeat on 17 Sep 2026 still failed with Cursor CLI `The provided API key is invalid` — same fingerprint as CIN, so this is a Cursor CLI/key-type issue to fix on the Gmail account, not a SYN-key mixup.
+3. Confirm `~/.kinwatch/github.env` is chmod 600 and the same PAT as CIN/PKN. **Add `asaf-avron/kinwatch` to PAT `personal-paperclip-oracle`** so Oracle agents can push/PR. Public clone already works.
 
 ## Accounts (you)
 
